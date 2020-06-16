@@ -13,6 +13,7 @@ connectDB();
 //Routes
 const bootcamps = require('./routes/bootcamp');
 const courses = require('./routes/courses');
+const auth = require('./routes/auth');
 
 const app = express();
 
@@ -27,6 +28,7 @@ app.use(fileUpload({
 ));
 app.use('/api/v1/bootcamps/',bootcamps);
 app.use('/api/v1/courses/',courses);
+app.use('/api/v1/auth/',auth);
 app.use(errorHandler);
 
 const PORT = process.env.PORT || 5000;
